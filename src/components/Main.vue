@@ -1,5 +1,6 @@
 <script>
 import Card from './Card.vue'
+import {store} from '../data/store'
 export default {
   name: 'Main',
   components: { 
@@ -7,7 +8,7 @@ export default {
   },
   data(){
     return{
-
+      store
     }
   }
 
@@ -21,7 +22,7 @@ export default {
     <div class="container mp-container">
       <div class="form-floating">
         <!-- <select class="form-select" id="floatingSelect" aria-label="Floating label select example"> -->
-          <select class="select form-select p-1" aria-label="Floating label select example">
+          <select class="select form-select p-1" aria-label="Floating label">
             <!-- <option selected>Open this select menu</option> -->
             <option value="1">Alien</option>
             <option value="2">Two</option>
@@ -41,7 +42,15 @@ export default {
         <!-- <div class="container d-flex flex-wrap justify-content-between p-0"> -->
         <div class="container d-flex flex-wrap justify-content-between p-0">
 
-          <Card/>
+          <Card 
+          v-for="item in store.arrayList"
+          :key="item.id"
+          :imgUrl="item.card_images[0].image_url"
+          :name="item.name"
+          :type="item.type"
+          />
+          <!--* Oppure al posto di type -->
+          <!-- :type="item.archetype" -->
           
           <!-- <div class="container d-flex flex-wrap p-0"> -->
 
@@ -75,11 +84,10 @@ export default {
           </div>
             -->
             
+
+
         </div>
       </div>
-
-
-
 
   </main>
 </template>

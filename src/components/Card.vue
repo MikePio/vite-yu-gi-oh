@@ -1,6 +1,11 @@
 <script>
 export default {
   name: 'Card',
+  props:{
+    imgUrl: String,
+    name: String,
+    type: String
+  },
   data(){
     return{
 
@@ -13,82 +18,10 @@ export default {
 <template>
 
   <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
+    <img :src="imgUrl" class="card-img-top" :alt="name">
     <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
-    </div>
-  </div>
-
-  <div class="mp-card">
-    <img src="public\img\logo.png" class="card-img-top" alt="img">
-    <div class="card-body">
-      <h5 class="card-title text-center pt-3">Card title</h5>
-      <p class="card-text text-center py-3">Some</p>
+      <h5 class="card-title text-center pt-3">{{name}}</h5>
+      <p class="card-text text-center py-3">{{type}}</p>
     </div>
   </div>
 
@@ -110,11 +43,15 @@ export default {
     // margin: 0 10px 40px 10px;
     // margin: 0 0px 40px 0px;
     margin-bottom: 40px;
+    height: 400px;
     img{
       height: 300px;
     }
     .card-body{
       background-color: $primary-color;
+      height: 125px;
+      // min-height: 125px;
+      // max-height: 125px;
     }
   }
 

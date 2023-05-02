@@ -38,6 +38,7 @@ export default {
         </div>
         <!-- container cards -->
         <!-- <div class="container p-3 my-3 d-flex flex-wrap"> -->
+        <!-- <div class="container d-flex flex-wrap justify-content-between p-0"> -->
         <div class="container d-flex flex-wrap justify-content-between p-0">
 
           <Card/>
@@ -72,83 +73,8 @@ export default {
               <p class="card-text text-center py-3">Some</p>
             </div>
           </div>
+            -->
             
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div>
-            
-          <div class="mp-card">
-            <img src="public\img\logo.png" class="card-img-top" alt="img">
-            <div class="card-body">
-              <h5 class="card-title text-center pt-3">Card title</h5>
-              <p class="card-text text-center py-3">Some</p>
-            </div>
-          </div> -->
-            
-
-
-
-          
         </div>
       </div>
 
@@ -179,6 +105,8 @@ main{
     .result-api{
       background-color: #212529;
       color: white;
+      // width: 1288px;
+      width: 100%;
       
     }
     

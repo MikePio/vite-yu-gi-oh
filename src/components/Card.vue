@@ -34,10 +34,10 @@ export default {
   @use '../scss/main.scss' as *;
 
   .mp-card{
-    width: calc(100% / 5 - 10px);
+    width: calc(100% / 5 - 20px);
     height: 400px;
     // border: 1px blue dashed;
-    margin: 0 10px 40px 0;
+    margin: 0 10px 40px 10px;
     height: 400px;
     img{
       height: 300px;

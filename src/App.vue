@@ -17,7 +17,16 @@ export default {
   },
   methods: {
     getApi() {
-      axios.get(store.apiUrl + "?num=22&offset=0")
+      //* parametri fissi (num = 22 e offset = 0)
+      // axios.get(store.apiUrl + "?num=22&offset=0")
+      //* parametri dinamici
+      // * i parametri ora vengono cercati tramite params che sono: num e offset (vedi la riga precedente) 
+      axios.get(store.apiUrl, {
+        params:{
+          num: store.numberCards,
+          offset: store.offsetCards 
+        }
+      })
         // test errore
         // axios.get(store.apiUrl + "ptz?num=20&offset=0")
         .then(result => {

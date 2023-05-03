@@ -25,10 +25,12 @@ export default {
           <option v-for="type in store.arrayTypes" :key="type" :value="type">{{ type }}</option>
         </select>
       </div>
+      <br>
+      <button class="btn btn-warning">Search</button>
     </div>
 
     <!-- container grande -->
-    <div class="container p-3 my-3">
+    <div class="container p-3 my-3 d-flex flex-column align-items-center justify-content-center">
       <!-- risultato cards -->
       <div class="result-api p-3">
         <!-- <div class="fs-5" >Found 30* cards</div> -->
@@ -108,7 +110,7 @@ main {
     .result-api {
       background-color: #212529;
       color: white;
-      width: calc(100% - 10px);
+      width: calc(100% - 20px);
     }
   }
 

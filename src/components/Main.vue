@@ -35,7 +35,8 @@ export default {
       <div class="container p-3 my-3">
         <!-- risultato cards -->
         <div class="result-api p-3">
-          <div class="fs-5" >Found 30 cards</div>
+          <!-- <div class="fs-5" >Found 30* cards</div> -->
+          <div class="fs-5">Found {{store.arrayList.length}} cards</div>
         </div>
         <!-- container cards -->
         <!-- <div class="container p-3 my-3 d-flex flex-wrap"> -->
@@ -113,10 +114,7 @@ main{
     .result-api{
       background-color: #212529;
       color: white;
-      // width: 1288px;
       width: calc(100% - 10px);
-
-      // padding: 20px;
       
     }
     

@@ -40,7 +40,7 @@ export default {
         <!-- container cards -->
         <!-- <div class="container p-3 my-3 d-flex flex-wrap"> -->
         <!-- <div class="container d-flex flex-wrap justify-content-between p-0"> -->
-        <div class="container d-flex flex-wrap justify-content-between p-0">
+        <div class="container d-flex flex-wrap p-0">
 
           <Card 
           v-for="item in store.arrayList"
@@ -114,7 +114,9 @@ main{
       background-color: #212529;
       color: white;
       // width: 1288px;
-      width: 100%;
+      width: calc(100% - 10px);
+
+      // padding: 20px;
       
     }
     

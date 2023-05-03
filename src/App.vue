@@ -17,11 +17,16 @@ export default {
   },
   methods:{
     getApi(){
-      axios.get(store.apiUrl + "?num=20&offset=0")
+      axios.get(store.apiUrl + "?num=22&offset=0")
+      // test errore
+      // axios.get(store.apiUrl + "ptz?num=20&offset=0")
       .then(result => {
         // console.log(result.data.data);
         store.arrayList = result.data.data;
         // console.log(store.arrayList);
+      })
+      .catch(error => {
+        console.log(error);
       })
       
     }

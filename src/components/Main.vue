@@ -17,16 +17,17 @@ export default {
 <template>
   <main class="p-4">
     <!-- container con la select -->
-    <div class="container mp-container">
-      <div class="form-floating">
-        <!-- <select class="form-select" id="floatingSelect" aria-label="Floating label select example"> -->
-        <select v-model="store.selectedType" class="select form-select p-1" aria-label="Floating label">
-          <option value="Choose a type" selected>Choose a type</option>
-          <option v-for="type in store.arrayTypes" :key="type" :value="type">{{ type }}</option>
-        </select>
-      </div>
-      <br>
-      <button @click="$emit('searchCards')" class="btn btn-warning">Search</button>
+    <div class="container mp-container d-flex ">
+      <select @click="$emit('searchCards')" v-model="store.selectedType" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option value="null" selected>Choose a type</option>
+        <!-- <option value="null" @click="$emit('searchCards'), $emit('resetSearch')" selected>Choose a type</option> -->
+        <!-- <option @click="$emit('searchCards')"  selected>Choose a type</option> -->
+        <!-- <option @click="$emit('searchCards')">All</option> -->
+        <!-- <option @click="$emit('resetSearch')" value="null" >All</option> -->
+        <option v-for="type in store.arrayTypes" :key="type" :value="type">{{ type }}</option>
+      </select>
+      <!-- <button @click="$emit('searchCards')" class="btn btn-warning">Search</button> -->
+      <button @click="$emit('resetSearch')" class="btn btn-danger ms-3">Reset</button>
     </div>
 
     <!-- container grande -->
@@ -95,8 +96,12 @@ main {
     background-color: $primary-color;
   }
 
-  .form-floating {
-    width: 150px;
+  // .form-floating {
+  //   width: 150px;
+  // }
+
+  .form-select-sm{
+    width: 200px;
   }
 
   .select {

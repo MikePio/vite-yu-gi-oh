@@ -64,7 +64,18 @@ export default {
           console.log(error);
         })
 
+    },
+
+    // *Fai funzionare il pulsante reset ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    resetCards(){
+      // this.getApi();
+      store.selectedType = null
+      store.numberCards= 30
+      store.offsetCards= 0
+      console.log('test');
+      this.getApi();
     }
+    
 
   },
   mounted() {
@@ -78,7 +89,7 @@ export default {
 
 <template>
   <Header />
-  <Main @searchCards="getApi" />
+  <Main @searchCards="getApi" @resetSearch="resetCards" />
 </template>
 
 <style lang="scss">

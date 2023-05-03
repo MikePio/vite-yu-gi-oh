@@ -1,62 +1,57 @@
 <script>
-import Card from './Card.vue'
-import {store} from '../data/store'
+import Card from "./Card.vue";
+import { store } from "../data/store";
 export default {
-  name: 'Main',
-  components: { 
-    Card
+  name: "Main",
+  components: {
+    Card,
   },
-  data(){
-    return{
-      store
-    }
-  }
-
-}
+  data() {
+    return {
+      store,
+    };
+  },
+};
 </script>
 
 <template>
   <main class="p-4">
-
     <!-- container con la select -->
     <div class="container mp-container">
       <div class="form-floating">
         <!-- <select class="form-select" id="floatingSelect" aria-label="Floating label select example"> -->
-          <select class="select form-select p-1" aria-label="Floating label">
-            <!-- <option selected>Open this select menu</option> -->
-            <option value="1">Alien</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
+        <select class="select form-select p-1" aria-label="Floating label">
+          <option value="" selected>Choose a type</option>
+          <option v-for="type in store.arrayTypes" :key="type" :value="type">{{ type }}</option>
+        </select>
       </div>
-      
-      <!-- container grande -->
-      <div class="container p-3 my-3">
-        <!-- risultato cards -->
-        <div class="result-api p-3">
-          <!-- <div class="fs-5" >Found 30* cards</div> -->
-          <div class="fs-5">Found {{store.arrayList.length}} cards</div>
-        </div>
-        <!-- container cards -->
-        <!-- <div class="container p-3 my-3 d-flex flex-wrap"> -->
-        <!-- <div class="container d-flex flex-wrap justify-content-between p-0"> -->
-        <div class="container d-flex flex-wrap p-0">
+    </div>
 
-          <Card 
-          v-for="item in store.arrayList"
+    <!-- container grande -->
+    <div class="container p-3 my-3">
+      <!-- risultato cards -->
+      <div class="result-api p-3">
+        <!-- <div class="fs-5" >Found 30* cards</div> -->
+        <div class="fs-5">Found {{ store.arrayCards.length }} cards</div>
+      </div>
+      <!-- container cards -->
+      <!-- <div class="container p-3 my-3 d-flex flex-wrap"> -->
+      <!-- <div class="container d-flex flex-wrap justify-content-between p-0"> -->
+      <div class="container d-flex flex-wrap p-0">
+        <Card
+          v-for="item in store.arrayCards"
           :key="item.id"
           :imgUrl="item.card_images[0].image_url"
           :name="item.name"
           :type="item.type"
-          />
-          <!--* Oppure al posto di type -->
-          <!-- :type="item.archetype" -->
-          
-          <!-- <div class="container d-flex flex-wrap p-0"> -->
+        />
+        <!--* Oppure al posto di type -->
+        <!-- :type="item.archetype" -->
 
-            <!--* card  con mb-3-->
-            <!--             
+        <!-- <div class="container d-flex flex-wrap p-0"> -->
+
+        <!--* card  con mb-3-->
+        <!--             
               <div class="mp-card mb-3">
                 <img src="public\img\logo.png" class="card-img-top" alt="img">
                 <div class="card-body">
@@ -64,19 +59,18 @@ export default {
                   <p class="card-text text-center py-3">Some</p>
                 </div>
               </div> -->
-              
-              <!--* card con col-->
-              <!-- <div class="mp-card col">
+
+        <!--* card con col-->
+        <!-- <div class="mp-card col">
                 <img src="public\img\logo.png" class="card-img-top" alt="img">
                 <div class="card-body">
                   <h5 class="card-title text-center pt-3">Card title</h5>
                   <p class="card-text text-center py-3">Some</p>
                 </div>
               </div> -->
-              
-              
-              <!--* card senza col -->
-          <!-- <div class="mp-card">
+
+        <!--* card senza col -->
+        <!-- <div class="mp-card">
             <img src="public\img\logo.png" class="card-img-top" alt="img">
             <div class="card-body">
               <h5 class="card-title text-center pt-3">Card title</h5>
@@ -84,50 +78,48 @@ export default {
             </div>
           </div>
             -->
-            
-
-
-        </div>
       </div>
-
+    </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
-  @use '../scss/main.scss' as *;
+@use "../scss/main.scss" as *;
 
-main{
+main {
   background-color: $primary-color;
 
-  .container.mp-container{
+  .container.mp-container {
     background-color: $primary-color;
   }
-  .form-floating{
+
+  .form-floating {
     width: 150px;
   }
-  .select{
+
+  .select {
     width: 150px;
     border-radius: 5px;
   }
-  .container{
+
+  .container {
     background-color: white;
-    .result-api{
+
+    .result-api {
       background-color: #212529;
       color: white;
       width: calc(100% - 10px);
-      
     }
-    
   }
 
-  //CODICE UTILIZZATO IN PRECEDENZA PER LE CARDS E ADESSO SPOSTATO NEL COMPONENTE CARD 
+  //CODICE UTILIZZATO IN PRECEDENZA PER LE CARDS E ADESSO SPOSTATO NEL COMPONENTE CARD
 
   // .mp-card{
   //   width: calc(100% / 5 - 20px);
   //   // width: calc((100% / 5 ) - 10px);
-    
+
   //   // width: calc(100% / 5 );
-    
+
   //   // width: 250px;
   //   height: 400px;
   //   // border: 1px blue dashed;
@@ -141,6 +133,5 @@ main{
   //     background-color: $primary-color;
   //   }
   // }
-
 }
 </style>

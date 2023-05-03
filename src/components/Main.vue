@@ -20,13 +20,13 @@ export default {
     <div class="container mp-container">
       <div class="form-floating">
         <!-- <select class="form-select" id="floatingSelect" aria-label="Floating label select example"> -->
-        <select class="select form-select p-1" aria-label="Floating label">
-          <option value="" selected>Choose a type</option>
+        <select v-model="store.selectedType" class="select form-select p-1" aria-label="Floating label">
+          <option value="Choose a type" selected>Choose a type</option>
           <option v-for="type in store.arrayTypes" :key="type" :value="type">{{ type }}</option>
         </select>
       </div>
       <br>
-      <button class="btn btn-warning">Search</button>
+      <button @click="$emit('searchCards')" class="btn btn-warning">Search</button>
     </div>
 
     <!-- container grande -->
